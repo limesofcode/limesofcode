@@ -70,7 +70,7 @@ terminalInput.addEventListener("keydown", async function (e) {
 
         // fetch protected content
         setTimeout(() => {
-          window.location.href = "main/bewarelimerangersahead.html";
+          window.location.href = "/main/bewarelimerangersahead.html";
         }, 1000);
 
       } else {
