@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <script>
+
+const token = localStorage.getItem("limeAuth");
+
+if(!token){
+  window.top.location.href = "/";
+}
+
+fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken",{
+  headers:{
+    Authorization: "Bearer " + token
+  }
+})
+.then(res => res.json())
+.then(data => {
+  if(!data.valid){
+    window.top.location.href = "/";
+  }
+})
+.catch(()=>{
+  window.top.location.href = "/";
+});
+
+</script>
+    </head>
+    <body class="page">
+        <p>Nothing here yet...</p>

@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+<script>
+
+const token = localStorage.getItem("limeAuth");
+
+if(!token){
+  window.top.location.href = "/";
+}
+
+fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken",{
+  headers:{
+    Authorization: "Bearer " + token
+  }
+})
+.then(res => res.json())
+.then(data => {
+  if(!data.valid){
+    window.top.location.href = "/";
+  }
+})
+.catch(()=>{
+  window.top.location.href = "/";
+});
+
+</script>
+
+	<script>
+		window.onload = function() {
+			alert("fufu... as it turns out, you have access to the Officer's hideout. click [ok] or press [enter] if youre on pc to dismiss this message.");
+		};
+	</script>
+</head>
+<body>
+	<div class="menu">
+		<a href="home.html" target="content">Home</a>
+		<a href="list.html" target="content">List</a>
+		<a href="entries.html" target="content">Entries</a>
+		<a href="secret.html" style="float: right;" target="content">&#10240;</a>
+	</div>
+	<div class="left">
+
+		<div class="top">
+			<div class="window-header">Profile</div>
+			<div class="window-content">
+				<table>
+					<tr>
+						<td>
+							<img src="imgs/rui.png" width=150 class="profile-img">
+							<i style="font-size: 10px; text-align: center;">aww rui i love you so much you are so me.</i>
+						</td>
+						<td >
+							<table class="info-table">
+								<tr>
+									<td>&#9984;</td>
+									<td>name</td>
+									<td>lime/ren/ace/kyutaro</td>
+								</tr>
+								<tr>
+									<td>&#10021;</td>
+									<td>location</td>
+									<td>philippines</td>
+								</tr>
+								<tr>
+									<td>&#10033;</td>
+									<td>dream job</td>
+									<td>i dont know. i have nothing ahead of me</td>
+								</tr>
+								<tr>
+									<td>&#10173;</td>
+									<td>hobbies</td>
+									<td>photography, playing, writing, coding</td>
+								</tr>
+								<tr>
+									<td>&#10070;</td>
+									<td>likes</td>
+									<td>cats, bunnies, akito shinonome, breadboards, the color green, yaoi</td>
+								</tr>
+								<tr>
+									<td>&#10132;</td>
+									<td>dislikes</td>
+									<td>yaoi, myself</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+				<p>I upload photos I take in my ig sometimes. You will find the account if you scroll down a bit</p>
+				<p>^ I need a real camera. As of now I still use my phone to take shots lol</p>
+
+				<h2>my socials</h2>
+
+				<table class="info-table-2">
+
+					<tr>
+						<td>&#9984;</td>
+						<td><a href="https://www.instagram.com/limesofcode">insta</a></td>
+					</tr>
+					<tr>
+						<td>&#10021;</td>
+						<td><a href="https://discord.com/users/868087341611372564">discord</a></td>
+					</tr>
+					<tr>
+						<td>&#10021;</td>
+						<td><a href="https://www.tiktok.com/@paracekit">tiktok</a></td>
+					</tr>
+					<tr>
+						<td>&#10033;</td>
+						<td><a href="https://x.com/limesofcode">priv twt [feel free to req!]</a></td>
+					</tr>
+					<tr>
+						<td>&#10173;</td>
+						<td><a href="https://www.roblox.com/users/1516440929/profile">roblox</a></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="bottom">
+			<div class="window-header">Daily Log</div>
+			<div class="window-content">
+				<div class="log">
+					<div class="log-date">[2026-03-15]</div>
+					<div class="log-line">Stressing out on where to host this website.</div>
+				</div>
+
+				<div class="log">
+					<div class="log-date">[2026-03-14]</div>
+					<div class="log-line">Cannot stop thinking about ruikasa and akitoya. My yaois. Anyways started writing the password system along with the backend code and finished. Hyperfocused today!!!</div>
+				</div>
+
+				<div class="log">
+					<div class="log-date">[2026-03-13]</div>
+					<div class="log-line"><b style="color: #BB88EE;">Someone</b> got granted access to this site.</div>
+				</div>
+
+				<div class="log">
+					<div class="log-date">[2026-03-13]</div>
+					<div class="log-line">Jasjawa'a fisyo.</div>
+				</div>
+				<div class="log">
+					<div class="log-date">[2026-03-13]</div>
+					<div class="log-line"><b style="color: #e91e63;"> Someone</b> got granted access to this site. Also started writing the contents of the "Home" tab, putting people who will have access in the "List" tab and finished aforesaid.</div>
+				</div>
+				<div class="log">
+					<div class="log-date">[2026-03-12]</div>
+					<div class="log-line">Started developing this site!</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="right">
+		<div class="window-header">Content</div>
+		<div class="window-content">
+			<iframe src="home.html" name="content"></iframe>
+		</div>
+	</div>
+</body>
+</html>

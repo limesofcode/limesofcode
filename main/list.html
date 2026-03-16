@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=0.1">
+        <script>
+
+const token = localStorage.getItem("limeAuth");
+
+if(!token){
+  window.top.location.href = "/";
+}
+
+fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken",{
+  headers:{
+    Authorization: "Bearer " + token
+  }
+})
+.then(res => res.json())
+.then(data => {
+  if(!data.valid){
+    window.top.location.href = "/";
+  }
+})
+.catch(()=>{
+  window.top.location.href = "/";
+});
+
+</script>
+    </head>
+    <body class="page">
+        <h1 style="font-size: 20px;">LIST OF PEOPLE WHO HAVE ACCESS!!!!!!!!</h1>
+        <p>in no particular order,</p>
+            <ul>
+                <li>Ailee <b style="color: #e91e63;">"Let's see if my hypothesis is correct!"</b> </li>
+                <li>Charlie <b style="color: #BB88EE;">"So, Tsukasa... Thank you for giving me the opportunity to change the way I have."</b></li>
+            </ul>

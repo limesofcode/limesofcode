@@ -1,0 +1,43 @@
+body{
+    background:rgb(18, 15, 15);
+    color:#ffffffd4;
+    font-family: Consolas, monospace;
+    margin:0;
+    padding:20px;
+}
+
+#terminal{
+    max-width:900px;
+}
+
+#output p{
+    margin:0;
+}
+
+#terminal {
+    width: 80%;
+    max-width: 800px;
+}
+
+#terminalHeader {
+    margin-bottom: 20px;
+    line-height: 1.2em;
+}
+
+#terminalInput {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #e3e3e3;
+    font-family: monospace;
+    font-size: 16px;
+    width: 100%;
+    caret-color: #e3e3e3;
+    caret-shape: block;
+}
+
+#inputLine{
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}

@@ -1,0 +1,213 @@
+body {
+	background-color: #25282b;
+	color: #EEE;
+	font-family: "Roboto Mono", monospace;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 12px;
+	margin: 0;
+	padding: 0;
+	background-repeat: repeat-x;
+}
+
+body, html {
+	position: relative;
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+.left {
+	position: absolute;
+	left: 0;
+	right: 60%;
+	top: 28px;
+	bottom: 0;
+}
+
+.right {
+	position: absolute;
+	left: 40%;
+	right: 0;
+	top: 28px;
+	bottom: 0;
+	border: 1px solid black;
+}
+
+.top {
+	border: 1px solid #000;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 300px;
+}
+
+.bottom {
+	border: 1px solid #000;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 300px;
+}
+
+iframe {
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+.page img {
+	max-width: 100%;
+}
+
+.page {
+	color: #D4FC5E;
+	padding: 12px;
+	box-sizing: border-box;
+	max-width: 800px;
+	overflow: auto;
+}
+
+h1 {
+	color: #EE7F4F;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+h1:before {
+	content: '==========================================';
+	color: #50CFDF;
+	display: block;
+}
+
+h1:after {
+	content: '==========================================';
+	color: #50CFDF;
+	display: block;
+}
+
+h2 {
+	color: #EE7F4F;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+h2:after, .info-table-2 a {
+	content: '------------------------------------------';
+	color: #50CFDF;
+	display: block;
+}
+
+a {
+	color: #EE7F4F;
+}
+
+i {
+	color: #976BB5;
+}
+
+.window-header {
+	background: #000;
+	font-family: Arial, sans-serif;
+	padding: 6px;
+}
+
+.window-header:after {
+	content: "\25A2  \25A2";
+	opacity: 0.3;
+	font-size: 18px;
+	line-height: 14px;
+	float: right;
+}
+
+.window-content {
+	padding: 12px;
+	height: calc(100% - 50px);
+	overflow: auto;
+}
+
+/* This is for the iframe window - we don't want the outside window to scroll, only the iframe */
+.right .window-content {
+	padding: 0;
+	overflow: hidden;
+}
+
+.log-date {
+	color: #50CFDF;
+	display: inline-block;
+	margin-right: 24px;
+}
+
+.log-line {
+	color: #D4FC5E;
+	display: inline-block;
+}
+
+.info-table td:nth-child(1) {
+	color: #4CC2D2;
+	padding-right: 12px;
+}
+
+.info-table td:nth-child(2) {
+	color: #CE6F40;
+	padding-right: 24px;
+}
+
+.info-table tr:nth-child(odd) td:nth-child(3) {
+	color: #C19C00;
+}
+
+.info-table tr:nth-child(even) td:nth-child(3) {
+	color: #A070C0;
+}
+
+.info-table-2 td:nth-child(1) {
+	color: #EEE;
+	padding-right: 12px;
+}
+
+.info-table-2 td:nth-child(2) {
+	color: #4CC2D2;
+	margin-right: 24px;
+	background: #343A47;
+}
+
+.info-table-2 tr:nth-child(odd) td:nth-child(3) {
+	color: #D4FC5E;
+}
+
+.info-table-2 tr:nth-child(even) td:nth-child(3) {
+	color: #CE6F40;
+}
+
+.menu {
+	background: #DF7126;
+	padding: 6px;
+}
+
+.menu a {
+	padding: 6px;
+	color: black;
+	text-decoration: none;
+	font-weight: bold;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+
+}
+.menu a:hover {
+	background: #303030;
+	color: #DF7126;
+}
+
+.profile-img {
+	margin-right: 24px;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	display: none;
+}
