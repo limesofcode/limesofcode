@@ -69,11 +69,9 @@ terminalInput.addEventListener("keydown", async function (e) {
         localStorage.setItem("limeAuth", result.token);
 
         // fetch protected content
-        const secureResponse = await fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken", {
-          headers: { "Authorization": "Bearer " + result.token }
-        });
-        const secureHtml = await secureResponse.text();
-        document.body.innerHTML = secureHtml;
+        setTimeout(() => {
+          window.location.href = "main/bewarelimerangersahead.html";
+        }, 1000);
 
       } else {
         msg.textContent = result.error || "Access denied.";
