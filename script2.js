@@ -69,7 +69,7 @@ terminalInput.addEventListener("keydown", async function (e) {
         localStorage.setItem("limeAuth", result.token);
 
         // fetch protected content
-        const secureResponse = await fetch("https://limesofsourcecode.netlify.app/.netlify/functions/secureContent", {
+        const secureResponse = await fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken", {
           headers: { "Authorization": "Bearer " + result.token }
         });
         const secureHtml = await secureResponse.text();
