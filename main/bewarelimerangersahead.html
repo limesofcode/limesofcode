@@ -2,31 +2,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<style>
-  body { display: none; }
-</style>
+	<script>
 
-<script>
 const token = localStorage.getItem("limeAuth");
 
-if (!token) {
+if(!token){
   window.top.location.href = "/";
-} else {
-  fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken", {
-    headers: { Authorization: "Bearer " + token }
-  })
-  .then(res => res.json())
-  .then(data => {
-    if (data.valid) {
-      document.body.style.display = "block"; // show page ONLY if valid
-    } else {
-      window.top.location.href = "/";
-    }
-  })
-  .catch(() => {
-    window.top.location.href = "/";
-  });
 }
+
+fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken",{
+  headers:{
+    Authorization: "Bearer " + token
+  }
+})
+.then(res => res.json())
+.then(data => {
+  if(!data.valid){
+    window.top.location.href = "/";
+  }
+})
+.catch(()=>{
+  window.top.location.href = "/";
+});
+
 </script>
 		<script>
 		window.onload = function() {
