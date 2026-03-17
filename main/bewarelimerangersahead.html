@@ -2,36 +2,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<style>
+  body { display: none; }
+</style>
+
+<script>
+const token = localStorage.getItem("limeAuth");
+
+if (!token) {
+  window.top.location.href = "/";
+} else {
+  fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken", {
+    headers: { Authorization: "Bearer " + token }
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.valid) {
+      document.body.style.display = "block"; // show page ONLY if valid
+    } else {
+      window.top.location.href = "/";
+    }
+  })
+  .catch(() => {
+    window.top.location.href = "/";
+  });
+}
+</script>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title></title>
 	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="style.css">
-
-<script>
-
-const token = localStorage.getItem("limeAuth");
-
-if(!token){
-  window.top.location.href = "/";
-}
-
-fetch("https://limesofsourcecode.netlify.app/.netlify/functions/verifyToken",{
-  headers:{
-    Authorization: "Bearer " + token
-  }
-})
-.then(res => res.json())
-.then(data => {
-  if(!data.valid){
-    window.top.location.href = "/";
-  }
-})
-.catch(()=>{
-  window.top.location.href = "/";
-});
-
-</script>
 
 	<script>
 		window.onload = function() {
